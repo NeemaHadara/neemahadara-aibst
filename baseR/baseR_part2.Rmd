@@ -1,0 +1,68 @@
+---
+title: "Untitled"
+author: "Nesh"
+date: "2022-11-09"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Loading the dataset
+```{r}
+my_data <- readRDS("my_day2matrix.rds")
+my_data
+```
+
+```{r}
+dataplus <- cbind(my_data, rowSums = rowSums(my_data), rowMeans = rowMeans(my_data))
+dataplus
+```
+
+```{r}
+
+hypotenuse <- function(a,b){
+
+hypo <- sqrt(a^2+b^2)
+return(hypo)
+}
+```
+
+
+```{r}
+hypotenuse(5,5)
+```
+```{r}
+s <- c(1:10)
+s
+square <- function(s){
+  sq=s^2
+  return(sq)
+}
+
+lapply(s, square)
+```
+## lapply
+lapply(s, square)
+```{r}
+lapply(s, square)
+```
+```{r}
+sapply(s, square)
+```
+```{r}
+```
+
+## listing both numerical and logical vectors
+```{r}
+new_list <- list(s, c(1:10),seq(from = 2, to = 10 , by = 2), c(T,T,F,T,F))
+
+
+sapply(new_list, sum)
+lapply(new_list, sum)
+```
+```{r}
+BiocManager::install("eddelbuettel/harmony", force = TRUE)
+```
+
